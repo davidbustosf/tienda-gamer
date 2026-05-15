@@ -1,0 +1,436 @@
+/* ============================================================
+   TIENDA GAMER - Estilos principales
+   Paleta: #09D8C7 | #17364F | #0D1A2F | #411E3A | #BD0927 | #500A1F
+   INTEGRANTE 2: Subir carpeta assets/ completa
+   ============================================================ */
+
+:root {
+    --cyan:        #09D8C7;
+    --cyan-dim:    rgba(9,216,199,.15);
+    --navy:        #0D1A2F;
+    --dark-blue:   #17364F;
+    --purple:      #411E3A;
+    --red:         #BD0927;
+    --dark-red:    #500A1F;
+
+    /* Texto - escala de legibilidad */
+    --text-primary:  #f0f4f8;   /* títulos y texto importante */
+    --text-secondary:#c8d8e8;   /* texto normal */
+    --text-muted:    #8baabf;   /* texto secundario, siempre legible */
+    --text-dim:      #5c7a94;   /* hints muy suaves */
+}
+
+/* ── Reset / Bootstrap overrides ──────────────────────────── */
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--navy);
+    color: var(--text-secondary);
+    min-height: 100vh;
+}
+
+/* Texto muted legible en fondo oscuro */
+.text-muted { color: var(--text-muted) !important; }
+small.text-muted, p.text-muted, span.text-muted { color: var(--text-muted) !important; }
+
+h1, h2, h3, h4, h5, h6 { color: var(--text-primary); }
+p { color: var(--text-secondary); }
+
+/* ── Colores utilitarios ───────────────────────────────────── */
+.text-cyan     { color: var(--cyan) !important; }
+.text-red      { color: var(--red)  !important; }
+.bg-cyan       { background-color: var(--cyan)      !important; }
+.bg-red        { background-color: var(--red)       !important; }
+.bg-navy       { background-color: var(--navy)      !important; }
+.bg-dark-blue  { background-color: var(--dark-blue) !important; }
+
+/* ── Navbar ────────────────────────────────────────────────── */
+.gamer-navbar {
+    background-color: var(--dark-blue);
+    border-bottom: 2px solid var(--cyan);
+}
+.gamer-navbar .navbar-brand { font-size: 1.4rem; letter-spacing: .5px; color: var(--text-primary) !important; }
+.gamer-navbar .nav-link { color: var(--text-secondary) !important; transition: color .2s; }
+.gamer-navbar .nav-link:hover { color: var(--cyan) !important; }
+
+.gamer-dropdown {
+    background-color: var(--dark-blue) !important;
+    border: 1px solid rgba(9,216,199,.25) !important;
+}
+.gamer-dropdown .dropdown-item { color: var(--text-secondary) !important; }
+.gamer-dropdown .dropdown-item:hover {
+    background-color: var(--cyan-dim) !important;
+    color: var(--cyan) !important;
+}
+
+/* ── Botones ───────────────────────────────────────────────── */
+.btn-cyan {
+    background-color: var(--cyan);
+    border-color: var(--cyan);
+    color: var(--navy);
+    font-weight: 700;
+    transition: background .2s, transform .15s, box-shadow .2s;
+}
+.btn-cyan:hover, .btn-cyan:focus {
+    background-color: #07c4b4;
+    border-color: #07c4b4;
+    color: var(--navy);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(9,216,199,.35);
+}
+.btn-outline-cyan {
+    border-color: var(--cyan);
+    color: var(--cyan);
+    font-weight: 600;
+    transition: all .2s;
+}
+.btn-outline-cyan:hover {
+    background-color: var(--cyan);
+    color: var(--navy);
+    box-shadow: 0 4px 12px rgba(9,216,199,.25);
+}
+
+/* Outline-secondary oscuro → legible */
+.btn-outline-secondary {
+    border-color: rgba(9,216,199,.25) !important;
+    color: var(--text-muted) !important;
+}
+.btn-outline-secondary:hover {
+    background-color: rgba(9,216,199,.08) !important;
+    color: var(--text-secondary) !important;
+    border-color: rgba(9,216,199,.4) !important;
+}
+
+/* ── Formularios ───────────────────────────────────────────── */
+.form-control, .form-select {
+    background-color: rgba(13,26,47,.8) !important;
+    border-color: rgba(9,216,199,.25) !important;
+    color: var(--text-primary) !important;
+}
+.form-control::placeholder { color: var(--text-dim) !important; }
+.form-control:focus, .form-select:focus {
+    border-color: var(--cyan) !important;
+    box-shadow: 0 0 0 .2rem rgba(9,216,199,.2) !important;
+    background-color: rgba(13,26,47,.95) !important;
+}
+.form-label { color: var(--text-secondary) !important; font-weight: 600; }
+.form-select option { background-color: var(--dark-blue); color: var(--text-primary); }
+.input-group-text {
+    background-color: rgba(9,216,199,.1) !important;
+    border-color: rgba(9,216,199,.25) !important;
+    color: var(--cyan) !important;
+}
+.invalid-feedback { color: #fc8181; }
+
+/* Inputs de búsqueda (alias legacy) */
+.gamer-input  { /* heredado de .form-control */ }
+.gamer-select { /* heredado de .form-select */ }
+.gamer-ig     { /* heredado de .input-group-text */ }
+
+/* ── Cards gamer ───────────────────────────────────────────── */
+.gamer-card {
+    background-color: var(--dark-blue);
+    border: 1px solid rgba(9,216,199,.15);
+    border-radius: 14px;
+    transition: transform .22s, box-shadow .22s, border-color .22s;
+    overflow: hidden;
+    color: var(--text-secondary);
+}
+.gamer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 36px rgba(9,216,199,.12);
+    border-color: rgba(9,216,199,.4);
+}
+.gamer-card h6, .gamer-card h5, .gamer-card h4 { color: var(--text-primary); }
+.gamer-card p, .gamer-card small { color: var(--text-muted); }
+
+/* ── Imagen de producto ────────────────────────────────────── */
+.product-img-wrap {
+    height: 200px;
+    overflow: hidden;
+    background: rgba(13,26,47,.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.product-img-wrap img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform .35s;
+}
+.gamer-card:hover .product-img-wrap img { transform: scale(1.07); }
+.no-img-placeholder {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(23,54,79,.5);
+    color: var(--text-muted);
+    font-size: 3rem;
+}
+
+/* ── Badge categoría ───────────────────────────────────────── */
+.badge-categoria {
+    background: rgba(9,216,199,.15);
+    color: var(--cyan);
+    border: 1px solid rgba(9,216,199,.3);
+    font-size: .72rem;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-weight: 700;
+    letter-spacing: .4px;
+    white-space: nowrap;
+}
+
+/* ── Precio ────────────────────────────────────────────────── */
+.price-tag { color: var(--cyan); font-weight: 700; font-size: 1.1rem; }
+
+/* ── Stock ─────────────────────────────────────────────────── */
+.stock-ok   { color: #4ade80; }
+.stock-warn { color: #fb923c; }
+.stock-out  { color: var(--red); }
+
+/* ── Hero banner ───────────────────────────────────────────── */
+.gamer-hero {
+    background: linear-gradient(135deg, var(--dark-blue) 0%, var(--purple) 55%, var(--navy) 100%);
+    border: 1px solid rgba(9,216,199,.2);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+.gamer-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(9,216,199,.07) 0%, transparent 70%);
+    pointer-events: none;
+}
+.gamer-hero h1 { color: var(--text-primary) !important; }
+.gamer-hero p  { color: var(--text-muted)   !important; }
+
+/* ── Cards de admin / stats ────────────────────────────────── */
+.stat-card {
+    background-color: var(--dark-blue);
+    border: 1px solid rgba(9,216,199,.15);
+    border-radius: 12px;
+}
+.stat-icon {
+    width: 52px; height: 52px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* ── Formularios de admin ──────────────────────────────────── */
+.gamer-form-card {
+    background-color: var(--dark-blue);
+    border: 1px solid rgba(9,216,199,.18);
+    border-radius: 12px;
+    color: var(--text-secondary);
+}
+.gamer-form-card .card-header {
+    background: linear-gradient(135deg, rgba(9,216,199,.08), transparent);
+    border-bottom: 1px solid rgba(9,216,199,.2);
+    border-radius: 12px 12px 0 0 !important;
+    color: var(--cyan);
+}
+.gamer-form-card .card-header * { color: var(--cyan); }
+.gamer-form-card p, .gamer-form-card span { color: var(--text-secondary); }
+.gamer-form-card small, .gamer-form-card .text-muted { color: var(--text-muted) !important; }
+
+/* ── Tablas ────────────────────────────────────────────────── */
+.gamer-table { color: var(--text-secondary); }
+.gamer-table thead th {
+    background-color: rgba(9,216,199,.1);
+    color: var(--cyan);
+    font-size: .79rem;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    border-bottom: 1px solid rgba(9,216,199,.2);
+    white-space: nowrap;
+}
+.gamer-table tbody tr {
+    border-bottom: 1px solid rgba(255,255,255,.04);
+    transition: background .15s;
+}
+.gamer-table tbody tr:hover { background-color: rgba(9,216,199,.04); }
+.gamer-table td, .gamer-table th { vertical-align: middle; color: var(--text-secondary); }
+.gamer-table tfoot td { color: var(--text-muted); }
+
+/* ── Auth pages ────────────────────────────────────────────── */
+.auth-body { background-color: var(--navy); }
+.auth-card {
+    background-color: var(--dark-blue);
+    border: 1px solid rgba(9,216,199,.2);
+    border-radius: 20px;
+}
+.auth-title    { color: var(--text-primary) !important; }
+.auth-subtitle { color: var(--text-muted) !important; }
+.auth-label    { color: var(--text-secondary) !important; font-weight: 600; }
+.auth-divider  { border-color: rgba(9,216,199,.15); }
+
+/* Código 2FA - inputs individuales */
+.code-digit {
+    background-color: rgba(13,26,47,.9) !important;
+    border: 2px solid rgba(9,216,199,.3) !important;
+    border-radius: 10px !important;
+    color: var(--cyan) !important;
+    font-size: 1.6rem !important;
+    caret-color: var(--cyan);
+    transition: border-color .2s, box-shadow .2s;
+}
+.code-digit:focus {
+    border-color: var(--cyan) !important;
+    box-shadow: 0 0 0 3px rgba(9,216,199,.2) !important;
+    outline: none !important;
+}
+
+/* Ícono de verificación */
+.verify-icon-wrap {
+    width: 72px; height: 72px;
+    border-radius: 50%;
+    background: rgba(9,216,199,.1);
+    border: 2px solid rgba(9,216,199,.3);
+    display: flex; align-items: center; justify-content: center;
+}
+
+/* Barra de progreso del timer */
+.progress { border-radius: 10px; }
+.bg-cyan   { background-color: var(--cyan) !important; }
+
+/* ── Carrito ───────────────────────────────────────────────── */
+.cart-item-img {
+    width: 64px; height: 64px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid rgba(9,216,199,.2);
+    background: var(--navy);
+}
+
+/* ── Galería de producto ───────────────────────────────────── */
+.gallery-main {
+    width: 100%; height: 380px;
+    object-fit: contain;
+    background: rgba(13,26,47,.6);
+    border-radius: 14px;
+    border: 1px solid rgba(9,216,199,.15);
+    padding: 8px;
+}
+.gallery-thumb {
+    width: 72px; height: 72px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color .2s;
+    background: rgba(13,26,47,.4);
+}
+.gallery-thumb.active, .gallery-thumb:hover { border-color: var(--cyan); }
+
+/* ── Drop Zone ─────────────────────────────────────────────── */
+.drop-zone {
+    border: 2px dashed rgba(9,216,199,.35);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color .2s, background .2s;
+    color: var(--text-muted);
+}
+.drop-zone.dragover { border-color: var(--cyan); background: rgba(9,216,199,.06); }
+.preview-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(100px,1fr)); gap: 8px; }
+.preview-item {
+    position: relative; border-radius: 8px; overflow: hidden;
+    aspect-ratio: 1; cursor: grab;
+    border: 1px solid rgba(9,216,199,.2);
+}
+.preview-item img { width: 100%; height: 100%; object-fit: cover; }
+.preview-item .badge-principal {
+    position: absolute; top: 4px; left: 4px;
+    background: var(--cyan); color: var(--navy);
+    font-size: .62rem; font-weight: 700;
+    padding: 2px 6px; border-radius: 20px;
+}
+.preview-item .btn-remove {
+    position: absolute; top: 4px; right: 4px;
+    background: rgba(189,9,39,.9); color: #fff;
+    border: none; border-radius: 50%;
+    width: 22px; height: 22px; font-size: .7rem;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+}
+.preview-item.dragging { opacity: .4; }
+.spec-row { display: flex; gap: 8px; margin-bottom: 8px; }
+.spec-row input { flex: 1; }
+
+/* ── Pago / nav-pills ──────────────────────────────────────── */
+.nav-pills .nav-link {
+    color: var(--text-muted);
+    border: 1px solid rgba(9,216,199,.2);
+    border-radius: 8px;
+    transition: all .2s;
+}
+.nav-pills .nav-link.active {
+    background-color: var(--cyan);
+    color: var(--navy);
+    border-color: var(--cyan);
+    font-weight: 700;
+}
+.nav-pills .nav-link:hover:not(.active) {
+    color: var(--cyan);
+    border-color: var(--cyan);
+    background-color: var(--cyan-dim);
+}
+
+/* ── Alertas ───────────────────────────────────────────────── */
+.alert { border-radius: 10px; }
+.alert-success {
+    background: rgba(74,222,128,.12) !important;
+    border-color: rgba(74,222,128,.35) !important;
+    color: #86efac !important;
+}
+.alert-danger {
+    background: rgba(189,9,39,.15) !important;
+    border-color: rgba(189,9,39,.4)  !important;
+    color: #fca5a5 !important;
+}
+.alert-warning {
+    background: rgba(251,146,60,.12) !important;
+    border-color: rgba(251,146,60,.35) !important;
+    color: #fdba74 !important;
+}
+.alert-info {
+    background: rgba(9,216,199,.1)   !important;
+    border-color: rgba(9,216,199,.3)  !important;
+    color: var(--cyan)                !important;
+}
+.alert-link { color: inherit !important; font-weight: 700; text-decoration: underline; }
+.btn-close-white { filter: invert(1) grayscale(1) brightness(2); }
+
+/* ── Breadcrumb ────────────────────────────────────────────── */
+.breadcrumb-item { color: var(--text-muted) !important; }
+.breadcrumb-item + .breadcrumb-item::before { color: var(--text-dim) !important; }
+.breadcrumb-item.active { color: var(--text-secondary) !important; }
+
+/* ── Footer ────────────────────────────────────────────────── */
+.gamer-footer {
+    background-color: var(--dark-blue);
+    border-top: 1px solid rgba(9,216,199,.15);
+    color: var(--text-muted);
+}
+.gamer-footer strong { color: var(--text-primary); }
+
+/* ── Avatar navbar ─────────────────────────────────────────── */
+.avatar-sm { font-size: 1.3rem; color: var(--cyan); }
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 576px) {
+    .product-img-wrap { height: 160px; }
+    h2.fw-bold { font-size: 1.3rem; }
+    .gallery-main { height: 240px; }
+    .code-digit { width: 38px !important; height: 48px !important; font-size: 1.3rem !important; }
+}
+
+/* ── Scrollbar sutil ───────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--navy); }
+::-webkit-scrollbar-thumb { background: rgba(9,216,199,.25); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(9,216,199,.45); }
