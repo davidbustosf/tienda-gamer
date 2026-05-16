@@ -1,0 +1,20 @@
+# Variables de entorno (contienen credenciales)
+.env
+*.env
+
+# Uploads (archivos subidos por usuarios)
+tienda-gamer/Tienda_gamer/uploads/*
+!tienda-gamer/Tienda_gamer/uploads/.htaccess
+!tienda-gamer/Tienda_gamer/uploads/.gitkeep
+
+# Rate limiting (archivos temporales)
+/tmp/gz_rl_*
+
+# Logs
+*.log
+error_log
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -53,7 +53,7 @@ $iconosCat = [
 <div class="gamer-hero mb-5 text-center">
     <h1 class="fw-bold mb-2">
         <i class="bi bi-controller-fill text-cyan me-2"></i>
-        Bienvenido a <span class="text-cyan">GamerZone</span>
+        Bienvenido a <span class="text-cyan">Gamere</span>
     </h1>
     <p class="text-muted mb-0">Hardware y accesorios para llevar tu gaming al siguiente nivel</p>
 </div>
